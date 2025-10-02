@@ -1,1 +1,1 @@
-# Student-remimder-peer
+# Student-reminder-peer
