@@ -25,16 +25,19 @@ Task[] (`Struct`)
 ### 3. ⁠Lihat daftar reminder
 pengguna dapat melihat semua pengingat yang sudah dibuat dalam bentuk daftar terorganisir di terminal, jadi kita bisa tau apa saja tugas, ujian, atau kegiatan yang harus dikerjakan dalam waktu dekat.
 
-* Menampilkan semua reminder = daftar judul + tanggal + jam
-* Status = apakah reminder masih pending atau sudah done
-
+Menampilkan semua reminder 
+- Daftar Judul  
+- Tanggal
+- Jam 
+Menampilkan status reminder
+- Complete atau Uncomplete
 ### 4. ⁠Edit reminder
-untuk mengubah detail pengingat yang udah dibuat sebelumnya,  misalnya deadline tugas dimajuin, ganti jam ujian, atau kita salah input waktu.
+untuk mengubah detail pengingat yang sudah dibuat sebelumnya, misalnya deadline tugas di majukan, ganti jam ujian, atau kita salah input waktu.
 
-* Ubah judul = kalo mau ganti nama reminder
-* Ubah tanggal & jam = kalo jadwalnya berubah
-* Ubah prioritas = penting atau biasa aja
-* Ubah status = misalnya tandai complete atau uncomplate
+- Ubah Judul 
+- Ubah Tanggal & Jam 
+- Ubah Prioritas 
+- Ubah Status
 ### 5. ⁠Hapus reminder
 untuk menghapus pengingat yang sudah dijadwalkan.
 
