@@ -29,6 +29,7 @@ Menampilkan semua reminder
 - Daftar Judul  
 - Tanggal
 - Jam 
+- Kategori (tugas, kuis, uts, uas)
 Menampilkan status reminder
 - Complete atau Uncomplete
 ### 4. ⁠Edit reminder
