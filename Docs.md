@@ -3,15 +3,7 @@
 ## Deskripsi Aplikasi
 Studer adalah aplikasi pengingat tugas yang dirancang untuk membantu pengguna mengelola jadwal dan kewajiban mereka secara efisien. Sebelum menggunakan aplikasi, pengguna harus melakukan registrasi dengan memasukkan nama, email, dan kata sandi.
 
-
-## Fitur Fitur Aplikasi
-### 1. Input Data diri
-Penggunana dapat memasukkan data diri terlebih dahulu sebelum menggunakan aplikasi Studer seperti
-- Nama (`String`)
-- email (`String`)
-- Password (`String`)
-
-### 2. ⁠Tambah reminder
+### 1. ⁠Tambah reminder
 pengguna dapat menambahkan tugas beserta deadline adapun format input sebagai berikut :
 
 Task[] (`Struct`)
@@ -22,15 +14,15 @@ Task[] (`Struct`)
 - Status Complete (`Enum( Complete, Uncomplete )`)
 - Deadline (`string`)
 
-### 3. ⁠Lihat daftar reminder
+### 2. ⁠Lihat daftar reminder
 pengguna dapat melihat semua pengingat yang sudah dibuat dalam bentuk daftar terorganisir di terminal, jadi kita bisa tau apa saja tugas, ujian, atau kegiatan yang harus dikerjakan dalam waktu dekat.
 
 Menampilkan semua reminder 
 - Daftar Judul  
 - Tanggal
 - Jam 
-- Kategori (tugas, kuis, uts, uas)
-- status (uncomplete, complete)
+Menampilkan status reminder
+- Complete atau Uncomplete
 ### 4. ⁠Edit reminder
 untuk mengubah detail pengingat yang sudah dibuat sebelumnya, misalnya deadline tugas di majukan, ganti jam ujian, atau kita salah input waktu.
 
@@ -38,7 +30,7 @@ untuk mengubah detail pengingat yang sudah dibuat sebelumnya, misalnya deadline 
 - Ubah Tanggal & Jam 
 - Ubah Prioritas 
 - Ubah Status
-### 5. ⁠Hapus reminder
+### 4. ⁠Hapus reminder
 untuk menghapus pengingat yang sudah dijadwalkan.
 
 Konsep fitur hapus reminder:
@@ -46,13 +38,13 @@ Konsep fitur hapus reminder:
 * Selanjutnya, reminder setelahnya akan menggeser / mengisi bagian dari reminder yg dihapus
 * jumlah reminder berkurang 1
 
-### 6. ⁠Snooze/tunda
+### 5. ⁠Snooze/tunda
 untuk menunda pengingat yang telah dijadwalkan. Misalnya ingin menunda +- 1 jam, atau +- 1 hari
 
 Konsep fitur snooze reminder:
 * pilih reminder yg akan di tunda, lalu tentukan berapa lama waktu penundaannya (tambah keterangan kaya "snoozed +1 hour")
 * reminder tidak dihapus tapi hanya diubah waktunya jadi lebih lambat
-### 7. ⁠Sorting reminder
+### 6. ⁠Sorting reminder
 untuk mengurutkan daftar pengingat (reminder) agar lebih mudah dibaca, dikelola, dan diprioritaskan.
 Sehingga bisa meningkatkan keteraturan ~semua pengingat tersusun rapi sesuai prioritas
 
