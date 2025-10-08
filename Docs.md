@@ -12,7 +12,7 @@ Task[] (`Struct`)
 - Deskripsi tugas (`String`)
 - Skala Prioritas (`Enum( High, Medium, Low )`)
 - Status Complete (`Enum( Complete, Uncomplete )`)
-- Deadline (`string`)
+- Deadline (`Datetime/TimeStamp`)
 
 ### 2. ⁠Lihat daftar reminder
 pengguna dapat melihat semua pengingat yang sudah dibuat dalam bentuk daftar terorganisir di terminal, jadi kita bisa tau apa saja tugas, ujian, atau kegiatan yang harus dikerjakan dalam waktu dekat.
