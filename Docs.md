@@ -46,7 +46,7 @@ Konsep fitur snooze reminder:
 * reminder tidak dihapus tapi hanya diubah waktunya jadi lebih lambat
 ### 6. ⁠Sorting reminder
 untuk mengurutkan daftar pengingat (reminder) agar lebih mudah dibaca, dikelola, dan diprioritaskan.
-Sehingga bisa meningkatkan keteraturan ~semua pengingat tersusun rapi sesuai prioritas
+Sehingga bisa meningkatkan keteraturan dan pengingat tersusun rapi sesuai prioritas
 
 konsep kerja sorting reminder
 1. Berdasarkan waktu (Deadline/Date Sorting)
