@@ -44,7 +44,7 @@ untuk menunda pengingat yang telah dijadwalkan. Misalnya ingin menunda +- 1 jam,
 Konsep fitur snooze reminder:
 * pilih reminder yg akan di tunda, lalu tentukan berapa lama waktu penundaannya (tambah keterangan kaya "snoozed +1 hour")
 * reminder tidak dihapus tapi hanya diubah waktunya jadi lebih lambat
-### 7. ⁠Sorting reminder
+### 6. ⁠Sorting reminder
 untuk mengurutkan daftar pengingat (reminder) agar lebih mudah dibaca, dikelola, dan diprioritaskan.
 Sehingga bisa meningkatkan keteraturan ~semua pengingat tersusun rapi sesuai prioritas
 
