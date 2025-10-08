@@ -30,8 +30,7 @@ Menampilkan semua reminder
 - Tanggal
 - Jam 
 - Kategori (tugas, kuis, uts, uas)
-Menampilkan status reminder
-- Complete atau Uncomplete
+- status (uncomplete, complete)
 ### 4. ⁠Edit reminder
 untuk mengubah detail pengingat yang sudah dibuat sebelumnya, misalnya deadline tugas di majukan, ganti jam ujian, atau kita salah input waktu.
 
