@@ -150,7 +150,34 @@ int main() {
             tambahBeberapaTugas(Tugas);
             break;
         case 'L':
-            // Case lihat Tugas
+            // lihat tugas
+                cout << "\n========== DAFTAR TUGAS ==========\n" << endl;
+                
+                if (Tugas.size() == 0) {
+                    cout << "Belum ada tugas!" << endl;
+                } else {
+                    for (int i = 0; i < Tugas.size(); i++) {
+                        cout << "Tugas " << Tugas[i].Task_id << endl;
+                        cout << "Judul: " << Tugas[i].Judul_tugas << endl;
+                        
+                        if (Tugas[i].priority == HIGH) {
+                            cout << "Prioritas: HIGH" << endl;
+                        } else if (Tugas[i].priority == MEDIUM) {
+                            cout << "Prioritas: MEDIUM" << endl;
+                        } else {
+                            cout << "Prioritas: LOW" << endl;
+                        }
+                        
+                        if (Tugas[i].task_status == COMPLETE) {
+                            cout << "Status: COMPLETE" << endl;
+                        } else {
+                            cout << "Status: UNCOMPLETE" << endl;
+                        }
+                        
+                        cout << "----------------------------" << endl;
+                    }
+                }
+                cout << endl;
             
             break;
         case 'R':
@@ -166,24 +193,6 @@ int main() {
         }
     } while (dontClosetheProgram);
 
-   
-    int main(){
-        void lihatreminder(vector<string>judul, vector<string>deadline, vector<string>status){
-    
-    if (judul.size() == 0) {
-        cout << "\nBelum Ada Reminder!\n";
-        return;
-    }
-    
-    cout << "\n===== DAFTAR REMINDER =====\n\n";
-    
-    for (int i = 0; i < judul.size(); i++){
-        cout << (i + 1) << ". " << judul[i] << endl;
-        cout << "  Deadline: " << deadline[i] << endl;
-        cout << endl;
-    }
-    cout << "Total: " << judul.size() << " reminder\n";
-}
-}
+
     return 0;
 }
