@@ -168,7 +168,7 @@ int main() {
 
    
     int main(){
-    void lihatreminder(vector<string>judul, vector<string>deadline, vector<string>kategori, vector<string>status){
+        void lihatreminder(vector<string>judul, vector<string>deadline, vector<string>kategori, vector<string>status){
     
     if (judul.size() == 0) {
         cout << "\nBelum Ada Reminder!\n";
