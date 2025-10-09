@@ -151,6 +151,7 @@ int main() {
             break;
         case 'L':
             // lihat tugas
+            // lihat tugas
                 cout << "\n========== DAFTAR TUGAS ==========\n" << endl;
                 
                 if (Tugas.size() == 0) {
@@ -176,9 +177,9 @@ int main() {
                         
                         cout << "----------------------------" << endl;
                     }
-                
-                cout << endl;
                 }
+                cout << endl;
+            
             break;
         case 'R':
             // Case Sortir Tugas
