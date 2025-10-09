@@ -176,9 +176,9 @@ int main() {
                         
                         cout << "----------------------------" << endl;
                     }
-                }
+                
                 cout << endl;
-            
+                }
             break;
         case 'R':
             // Case Sortir Tugas
@@ -193,6 +193,6 @@ int main() {
         }
     } while (dontClosetheProgram);
 
-
+    
     return 0;
 }
