@@ -20,9 +20,7 @@ pengguna dapat melihat semua pengingat yang sudah dibuat dalam bentuk daftar ter
 Menampilkan semua reminder 
 - Daftar Judul  
 - Tanggal
-- Jam 
-Menampilkan status reminder
-- Complete atau Uncomplete
+- Status (complete atau uncomplete)
 ### 4. ⁠Edit reminder
 untuk mengubah detail pengingat yang sudah dibuat sebelumnya, misalnya deadline tugas di majukan, ganti jam ujian, atau kita salah input waktu.
 
