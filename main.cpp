@@ -166,6 +166,7 @@ int main() {
         }
     } while (dontClosetheProgram);
 
+    int main(){
     void lihatreminder(vector<string>judul, vector<string>deadline, vector<string>kategori, vector<string>status){
     
     if (judul.size() == 0) {
@@ -183,6 +184,6 @@ int main() {
     }
     cout << "Total: " << judul.size() << " reminder\n";
 }
-    
+}
     return 0;
 }
