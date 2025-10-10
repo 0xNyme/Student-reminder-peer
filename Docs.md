@@ -21,14 +21,14 @@ Menampilkan semua reminder
 - Daftar Judul  
 - Tanggal
 - Status (complete atau uncomplete)
-### 4. ⁠Edit reminder
+### 3. ⁠Edit reminder
 untuk mengubah detail pengingat yang sudah dibuat sebelumnya, misalnya deadline tugas di majukan, ganti jam ujian, atau kita salah input waktu.
 
 - Ubah Judul 
 - Ubah Tanggal & Jam 
 - Ubah Prioritas 
 - Ubah Status
-### 5. ⁠Hapus reminder
+### 4. ⁠Hapus reminder
 untuk menghapus pengingat yang sudah dijadwalkan.
 
 Konsep fitur hapus reminder:
@@ -36,7 +36,7 @@ Konsep fitur hapus reminder:
 * Selanjutnya, reminder setelahnya akan menggeser / mengisi bagian dari reminder yg dihapus
 * jumlah reminder berkurang 1
 
-### 6. ⁠Snooze/tunda
+### 5. ⁠Snooze/tunda
 untuk menunda pengingat yang telah dijadwalkan. Misalnya ingin menunda +- 1 jam, atau +- 1 hari
 
 Konsep fitur snooze reminder:
@@ -61,4 +61,5 @@ Contoh sederhana konsep kerjanya (alur):
 4. Sistem mengurutkan dari tanggal paling dekat → paling jauh.
 5. Hasilnya tampil dalam daftar rapi sesuai pilihan sorting.
 ## Library dan Technical case
+
 
