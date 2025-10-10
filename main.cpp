@@ -150,17 +150,19 @@ int main() {
             tambahBeberapaTugas(Tugas);
             break;
         case 'L':
-            // lihat tugas
-            // lihat tugas
+            // case lihat tugas
                 cout << "\n========== DAFTAR TUGAS ==========\n" << endl;
-                
+                //kalau belum ada tugas sama sekali
                 if (Tugas.size() == 0) {
                     cout << "Belum ada tugas!" << endl;
                 } else {
+                    // Kalau ada tugas, tampilkan satu per satu
                     for (int i = 0; i < Tugas.size(); i++) {
                         cout << "Tugas " << Tugas[i].Task_id << endl;
                         cout << "Judul: " << Tugas[i].Judul_tugas << endl;
-                        
+                        time_t tt = chrono::system_clock::to_time_t(Tugas[i].deadline);
+                        tm* tm = localtime(&tt);
+                        cout << "Deadline: " << put_time(tm, "%Y-%m-%d") << endl;
                         if (Tugas[i].priority == HIGH) {
                             cout << "Prioritas: HIGH" << endl;
                         } else if (Tugas[i].priority == MEDIUM) {
