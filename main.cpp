@@ -3,7 +3,8 @@
 #include <vector>
 #include <chrono>
 #include <sstream>      
-#include <iomanip>      
+#include <iomanip>  
+#include <algorithm>
 
 using namespace std;
 
@@ -114,6 +115,33 @@ void tambahBeberapaTugas(vector<Task>& daftarTugas) {
         temp.deadline = stringToTimePoint(deadlineStr);
         daftarTugas.push_back(temp);
         cout << endl;
+}
+
+void hapusTugas(vector<Task>& daftarTugas) {
+    cout << "\n========== Hapus Tugas ==========\n";
+    if (daftarTugas.empty()) {
+        cout << "Belum ada tugas!\n";
+        return;
+    }
+    for (const auto& task : daftarTugas) {
+        cout << "ID " << task.Task_id << ": " << task.Judul_tugas << endl;
+    }
+    int idHapus;
+    cout << "ID tugas yang ingin dihapus: " << endl;
+    cin >> idHapus;
+
+    auto it = std::remove_if(daftarTugas.begin(), daftarTugas.end(),
+        [idHapus](const Task& t) { return t.Task_id == idHapus; });
+
+    if (it != daftarTugas.end()) {
+        daftarTugas.erase(it, daftarTugas.end());
+        for (int i = 0; i < daftarTugas.size(); i++) {
+            daftarTugas[i].Task_id = i + 1;
+        }
+        cout << "Tugas berhasil dihapus!\n";
+    } else {
+        cout << "ID tidak ditemukan!\n";
+    }
 }
 
 // panggil untuk pertama x dijalankan
