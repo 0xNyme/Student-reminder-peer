@@ -4,6 +4,7 @@
 #include <chrono>
 #include <sstream>      
 #include <iomanip>      
+#include <algorithm>
 
 using namespace std;
 
@@ -162,6 +163,77 @@ void editTugas(vector<Task>& daftarTugas) {
     cout << "ID tidak ditemukan!\n";
 }
 
+void sortTugas(vector<Task>& daftarTugas) {
+    cout << "\n========== Sortir Tugas ==========\n";
+    if (daftarTugas.empty()) {
+        cout << "Belum ada tugas!\n";
+        return;
+    }
+
+    cout <<   "Pilih metode pengurutan:\n";
+    cout << "1.Berdasarkan Deadline (terdekat dulu)\n";
+    cout << "2.Berdasarkan Prioritas (HIGH > MEDIUM > LOW)\n";
+    cout << "3.Berdasarkan Judul (A-Z)\n";
+    cout << "4.Berdasarkan Judul (Z-A)\n";
+    cout << "Pilih (1/2/3/4): ";
+    
+    int pilihan;
+    cin >> pilihan;
+
+    switch (pilihan) {
+        case 1: // Sortir berdasarkan Deadline
+            sort(daftarTugas.begin(), daftarTugas.end(), 
+                [](const Task& a, const Task& b) {
+                    return a.deadline < b.deadline; // Deadline terdekat di atas
+                });
+            cout << "Tugas diurutkan berdasarkan Deadline!\n";
+            break;
+
+        case 2: // Sortir berdasarkan Prioritas
+            sort(daftarTugas.begin(), daftarTugas.end(), 
+                [](const Task& a, const Task& b) {
+                    return a.priority < b.priority; // HIGH(0) < MEDIUM(1) < LOW(2)
+                });
+            cout << "Tugas diurutkan berdasarkan Prioritas!\n";
+            break;
+
+        case 3: // Sortir berdasarkan Judul (A-Z)
+            sort(daftarTugas.begin(), daftarTugas.end(), 
+                [](const Task& a, const Task& b) {
+                    return a.Judul_tugas < b.Judul_tugas; // A-Z
+                });
+            cout << "Tugas diurutkan berdasarkan Judul (A-Z)!\n";
+            break;
+
+        case 4: // Sortir berdasarkan Judul (Z-A)
+            sort(daftarTugas.begin(), daftarTugas.end(), 
+                [](const Task& a, const Task& b) {
+                    return a.Judul_tugas > b.Judul_tugas; // Z-A
+                });
+            cout << "Tugas diurutkan berdasarkan Judul (Z-A)!\n";
+            break;
+
+        default:
+            cout << "Pilihan tidak valid!\n";
+            return;
+    }
+
+    // Tampilkan daftar tugas yang sudah diurutkan (menggunakan kode dari case 'L')
+    cout << "\n========== DAFTAR TUGAS ==========\n" << endl;
+    for (const auto& task : daftarTugas) {
+        cout << "Tugas " << task.Task_id << endl;
+        cout << "Judul: " << task.Judul_tugas << endl;
+        
+        time_t tt = chrono::system_clock::to_time_t(task.deadline);
+        tm* tm = localtime(&tt);
+        cout << "Deadline: " << put_time(tm, "%Y-%m-%d %H:%M") << endl;
+        
+        cout << "Prioritas: " << getPriorityString(task.priority) << endl;
+        cout << "Status: " << getStatusString(task.task_status) << endl;
+        cout << "----------------------------" << endl;
+    }
+}
+
 // panggil untuk pertama x dijalankan
 void firstOpen() {
     cout << "\n+===============================================+" << endl;
@@ -236,15 +308,40 @@ int main() {
             break;
         case 'R':
             // Case Sortir Tugas
-            
+            sortTugas(Tugas);
             break;
         case 'H':
             // Case Hapus Tugas
-            
+
             break;
         case 'S':
             // Case Snooze / Tunda Tugas
-
+            cout << "\n========== Tunda Tugas ==========\n";
+            if(Tugas.size() == 0){
+                cout << "Belum ada tugas!" << endl;
+            }else{
+                int id;
+                cout << "ID Tugas Mana yang ingin kamu tunda? "<<endl;
+                for (int i = 0; i < Tugas.size(); i++) {
+                    cout << "Id " << Tugas[i].Task_id << endl;
+                }
+                cout << "Masukkan ID yang ingin kamu tunda : ";
+                cin >> id;
+                for (int i = 0; i < Tugas.size(); i++) {
+                    if(Tugas[i].Task_id == id){
+                        string tunda;
+                        time_t tt = chrono::system_clock::to_time_t(Tugas[i].deadline);
+                        tm* tm = localtime(&tt);
+                        cout << "Waktu yang ingin kamu tunda " << put_time(tm, "%Y-%m-%d") << endl;
+                        cout << "Masukkan Deadline Baru (YYYY-MM-DD HH:MM): ";
+                        cin.ignore();
+                        getline(cin,tunda);
+                        cout << endl;
+                        Tugas[i].deadline = stringToTimePoint(tunda);
+                        cout << "Berhasil !" << endl;
+                    }
+                }
+            }
             break;
         case 'E':
             editTugas(Tugas);
