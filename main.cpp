@@ -176,8 +176,9 @@ void firstOpen() {
     cout << " - Sortir tugas (R)" << endl;
     cout << " - Snooze/Tunda tugas (S)" << endl;
     cout << " - Edit Tugas (E)" << endl;
+    cout << " - Hapus Tugas (H)" << endl;
     cout << "Mau apa nih kamu ? :D" << endl;
-    cout << "Pilih Menu (T/L/SR/ST/E)";
+    cout << "Pilih Menu (T/L/SR/ST/E/H)";
     cout << ": ";
 }
 
@@ -235,6 +236,10 @@ int main() {
             break;
         case 'R':
             // Case Sortir Tugas
+            
+            break;
+        case 'H':
+            // Case Hapus Tugas
             
             break;
         case 'S':
