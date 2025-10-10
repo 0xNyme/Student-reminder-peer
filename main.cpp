@@ -234,6 +234,31 @@ void sortTugas(vector<Task>& daftarTugas) {
     }
 }
 
+void hapusTugas(vector<Task>& daftarTugas) {
+    cout << "\n========== Hapus Tugas ==========\n";
+    if (daftarTugas.empty()) {
+        cout << "Belum ada tugas!\n";
+        return;
+    }
+    for (const auto& task : daftarTugas) {
+        cout << "ID " << task.Task_id << ": " << task.Judul_tugas << endl;
+    }
+    int idHapus;
+    cout << "ID tugas yang ingin dihapus: " << endl;
+    cin >> idHapus;
+
+    auto it = std::remove_if(daftarTugas.begin(), daftarTugas.end(),[idHapus](const Task& t) { return t.Task_id == idHapus; });
+    if (it != daftarTugas.end()) {
+        daftarTugas.erase(it, daftarTugas.end());
+        for (int i = 0; i < daftarTugas.size(); i++) {
+            daftarTugas[i].Task_id = i + 1;
+        }
+        cout << "Tugas berhasil dihapus!\n";
+    } else {
+        cout << "ID tidak ditemukan!\n";
+    }
+}
+
 // panggil untuk pertama x dijalankan
 void firstOpen() {
     cout << "\n+===============================================+" << endl;
@@ -312,7 +337,7 @@ int main() {
             break;
         case 'H':
             // Case Hapus Tugas
-
+            hapusTugas(Tugas);
             break;
         case 'S':
             // Case Snooze / Tunda Tugas
@@ -345,7 +370,6 @@ int main() {
             break;
         case 'E':
             editTugas(Tugas);
-            
             break;
         default:
             break;
