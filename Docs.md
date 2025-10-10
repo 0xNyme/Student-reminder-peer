@@ -28,7 +28,7 @@ untuk mengubah detail pengingat yang sudah dibuat sebelumnya, misalnya deadline 
 - Ubah Tanggal & Jam 
 - Ubah Prioritas 
 - Ubah Status
-### 4. ⁠Hapus reminder
+### 5. ⁠Hapus reminder
 untuk menghapus pengingat yang sudah dijadwalkan.
 
 Konsep fitur hapus reminder:
@@ -36,7 +36,7 @@ Konsep fitur hapus reminder:
 * Selanjutnya, reminder setelahnya akan menggeser / mengisi bagian dari reminder yg dihapus
 * jumlah reminder berkurang 1
 
-### 5. ⁠Snooze/tunda
+### 6. ⁠Snooze/tunda
 untuk menunda pengingat yang telah dijadwalkan. Misalnya ingin menunda +- 1 jam, atau +- 1 hari
 
 Konsep fitur snooze reminder:
@@ -61,3 +61,4 @@ Contoh sederhana konsep kerjanya (alur):
 4. Sistem mengurutkan dari tanggal paling dekat → paling jauh.
 5. Hasilnya tampil dalam daftar rapi sesuai pilihan sorting.
 ## Library dan Technical case
+
