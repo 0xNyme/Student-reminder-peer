@@ -116,6 +116,52 @@ void tambahBeberapaTugas(vector<Task>& daftarTugas) {
         cout << endl;
 }
 
+//untuk fitur edit reminder
+void editTugas(vector<Task>& daftarTugas) {
+    cout << "\n========== Edit Tugas ==========\n";
+    
+    if (daftarTugas.empty()) {
+        cout << "Belum ada tugas!\n";
+        return;
+    }
+    
+    for (const auto& task : daftarTugas) {
+        cout << "ID " << task.Task_id << ": " << task.Judul_tugas << endl;
+    }
+    
+    int idEdit;
+    cout << "\nID tugas: ";
+    cin >> idEdit;
+    cin.ignore();
+    
+    for (auto& task : daftarTugas) {
+        if (task.Task_id == idEdit) {
+            char prio, stat;
+            string deadlineStr;
+            
+            cout << "Judul baru: ";
+            getline(cin, task.Judul_tugas);
+            
+            cout << "Prioritas (H/M/L): ";
+            cin >> prio;
+            task.priority = (toupper(prio) == 'H') ? HIGH : (toupper(prio) == 'L') ? LOW : MEDIUM;
+            
+            cout << "Status (C/U): ";
+            cin >> stat;
+            task.task_status = (toupper(stat) == 'C') ? COMPLETE : UNCOMPLETE;
+            
+            cout << "Deadline (YYYY-MM-DD HH:MM): ";
+            cin.ignore();
+            getline(cin, deadlineStr);
+            task.deadline = stringToTimePoint(deadlineStr);
+            
+            cout << "\nSemua data diubah!\n";
+            return;
+        }
+    }
+    cout << "ID tidak ditemukan!\n";
+}
+
 // panggil untuk pertama x dijalankan
 void firstOpen() {
     cout << "\n+===============================================+" << endl;
@@ -129,8 +175,9 @@ void firstOpen() {
     cout << " - Lihat tugas (L)" << endl;
     cout << " - Sortir tugas (R)" << endl;
     cout << " - Snooze/Tunda tugas (S)" << endl;
+    cout << " - Edit Tugas (E)" << endl;
     cout << "Mau apa nih kamu ? :D" << endl;
-    cout << "Pilih Menu (T/L/SR/ST)";
+    cout << "Pilih Menu (T/L/SR/ST/E)";
     cout << ": ";
 }
 
@@ -159,6 +206,10 @@ int main() {
             break;
         case 'S':
             // Case Snooze / Tunda Tugas
+
+            break;
+        case 'E':
+            editTugas(Tugas);
             
             break;
         default:
